@@ -1,0 +1,23 @@
+:root{
+  --md-primary-fg-color: #111827;
+  --md-accent-fg-color: #00d4aa;
+}
+
+.md-header, .md-tabs{
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+}
+
+.md-logo img{
+  height: 28px;
+}
+
+/* Links */
+a{ color: #00d4aa; }
+a:hover{ color: #00b894; }
+
+/* Admonitions tweak */
+.md-typeset .admonition{ border-radius: 8px; }
+
+/* Footer */
+.md-footer{ background: #0f172a; }
+.md-footer .md-footer-meta{ background: #0b1220; }

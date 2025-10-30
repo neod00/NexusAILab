@@ -1,0 +1,72 @@
+site_name: LRQA ISO Application Platform – Technical White Paper
+site_description: Technical white paper for LRQA AI-based ISO Application Platform
+site_url: https://example.com
+repo_name: NexusAILab
+nav:
+  - Overview: index.md
+  - Executive Summary: executive-summary.md
+  - Architecture:
+      - System Architecture: architecture.md
+      - Data, AI & Security: data-ai-security.md
+  - Operations:
+      - Operations, Performance & Cost: operations-performance-cost.md
+      - Governance & Compliance: governance-compliance.md
+  - Results:
+      - Testing & Pilot: testing-pilot.md
+      - Limitations & Risks: limitations-risks.md
+  - Integrations & Roadmap: integrations.md
+  - Appendix:
+      - API: appendix/api.md
+      - Data Schema: appendix/data-schema.md
+      - Templates: appendix/templates.md
+      - FAQ: appendix/faq.md
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - content.tabs.link
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+  font:
+    text: Inter
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+  logo: https://www.lrqa.com/cdn-cgi/image/width=300,format=auto/globalassets/logos/lrqa-white-logo---dark-background-cropped.png
+  favicon: https://www.lrqa.com/favicon-32x32.png
+  custom_dir: overrides
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+  - awesome-pages
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/lrqa/
+    - icon: fontawesome/brands/github
+      link: https://github.com/
