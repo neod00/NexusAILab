@@ -7,7 +7,7 @@
 - Processing: quotation/report generation, analytics exports
 - Sharing: internal-only; exports via CSV/XLSX/Sheets links
 - Retention: configurable by environment; default 12–24 months (GDPR-aligned)
-- Deletion: subject-request workflow; soft-delete flag + periodic purge job
+- Deletion: data subject request workflow; soft-delete flag + periodic purge job
 
 ```mermaid
 flowchart LR
@@ -30,7 +30,7 @@ A --> BI[External BI]
 | ref_industries | code, name | normalization |
 | ref_iso | iso_code, name | validation |
 
-ERD(개념):
+ERD (conceptual):
 ```mermaid
 erDiagram
   SUBMISSIONS ||--o{ OPS : tracks
@@ -85,7 +85,7 @@ LLM --> OUT[Answer/Snippet]
 
 ## 5) Evaluation (AI & UX)
 - Offline: RAG relevance@k, answer faithfulness, toxicity/safety checks
-- Online: CSAT, time-to-answer, fallback rate, deflection rate(사람 문의 감소)
+- Online: CSAT, time-to-answer, fallback rate, deflection rate (reduced human escalations)
 - Golden Set: curated Q/A for ISO 9001/14001/45001 + gap scenarios
 - Regression: threshold gates in CI before prompt/model upgrades
 
@@ -103,25 +103,25 @@ LLM --> OUT[Answer/Snippet]
 - Backoff & Retry: exponential for 429/5xx; circuit breaker on spikes
 
 ## 8) Data Quality
-- Required field coverage dashboard (Sheets formula)
-- Duplicate detection: company+reg_no composite key
+- Required field coverage dashboard (Sheets formulas)
+- Duplicate detection: company + reg_no composite key
 - Anomaly rules: out-of-range employee counts, invalid scopes
 - Review queue: low-confidence records flagged to admin
 
 ## 9) Export & Interop
 - Exports: CSV/XLSX/PDF; BI connectors via Sheets
-- Downstream: CRM export template; Dynamics 365 mapping (로드맵)
+- Downstream: CRM export template; Dynamics 365 mapping (roadmap)
 
 ## 10) Checklists
 - Privacy
-  - [ ] 최소수집, 목적제한, 보존기간 정의
-  - [ ] 로그 마스킹, PII 내보내기 통제
-  - [ ] DSR 처리 절차(열람/삭제)
+  - [ ] Data minimization, purpose limitation, retention defined
+  - [ ] Log masking, PII export controls
+  - [ ] DSR process (access/delete) in place
 - Security
-  - [ ] 비밀/키 환경변수화
-  - [ ] CORS/입력검증 정책 점검
-  - [ ] 권한 공유 범위 최소화(Sheets)
+  - [ ] Secrets/keys in environment variables
+  - [ ] CORS/input validation policies verified
+  - [ ] Least-privilege sharing on Sheets
 - AI
-  - [ ] RAG 소스 최신/버전태깅
-  - [ ] 금지주제/민감도 가이드라인 반영
-  - [ ] 오프라인/온라인 평가 지표 대시보드화
+  - [ ] RAG sources up-to-date and versioned
+  - [ ] Prohibited topics/sensitivity guidelines applied
+  - [ ] Offline/online evaluation metrics dashboarded
