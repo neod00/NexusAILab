@@ -19,8 +19,9 @@ mkdocs build  # outputs to ./site
 ```
 
 ## Netlify
-- Build command: `pip install -r requirements.txt && mkdocs build`
+- Build command: `pip install -r requirements.txt && mkdocs build && [ -d submission ] && cp -r submission site/submission || true`
 - Publish directory: `site`
+- Access submission documents: `https://nexusailab.netlify.app/submission/`
 
 ## Structure
 ```
@@ -40,6 +41,9 @@ NexusAILab/
       data-schema.md
       templates.md
       faq.md
+  submission/
+    Mission_AI_Possible_Submission.html
+    LRQA_User_Guide.html
   overrides/
     assets/stylesheets/extra.css
   mkdocs.yml

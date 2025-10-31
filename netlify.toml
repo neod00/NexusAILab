@@ -1,5 +1,5 @@
 [build]
-  command = "pip install -r requirements.txt && mkdocs build"
+  command = "pip install -r requirements.txt && mkdocs build && [ -d submission ] && cp -r submission site/submission || true"
   publish = "site"
 
 [build.environment]
